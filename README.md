@@ -141,7 +141,7 @@ Once published, replace the `command`/`args` with:
 ```json
 {
   "command": "npx",
-  "args": ["@anthropic-user/mcp-memory-server"]
+  "args": ["-y", "@kengurukleo/mcp-memory-server"]
 }
 ```
 

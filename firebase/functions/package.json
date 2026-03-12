@@ -1,6 +1,6 @@
 {
   "name": "mcp-memory-server-functions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Firebase Cloud Functions backend for MCP Memory Server",
   "main": "lib/index.js",
   "scripts": {

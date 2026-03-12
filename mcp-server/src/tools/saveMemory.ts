@@ -16,10 +16,9 @@ export const saveMemorySchema = {
 export function registerSaveMemory(server: McpServer, api: MemoryApiClient): void {
   server.tool(
     "save_memory",
-    "Save a piece of information to the user's personal memory. " +
-    "Use this when the user asks you to remember something, " +
-    "or when they share important personal information worth preserving. " +
-    "The text should be a clear, self-contained statement that will be useful to recall later.",
+    "Save a fact to the user's personal long-term memory. " +
+    "Text should be a clear, atomic, self-contained statement (one fact per call). " +
+    "Returns the saved memory ID.",
     saveMemorySchema,
     async ({ text, tags }) => {
       const result = await api.saveMemory(text, tags);

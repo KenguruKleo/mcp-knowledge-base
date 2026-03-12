@@ -11,9 +11,8 @@ export const deleteMemorySchema = {
 export function registerDeleteMemory(server: McpServer, api: MemoryApiClient): void {
   server.tool(
     "delete_memory",
-    "Delete a specific memory by its ID. " +
-    "Use this when the user wants to remove outdated or incorrect information from their memory. " +
-    "First use find_memories to locate the memory, then delete it by ID.",
+    "Delete a memory by its ID. " +
+    "Use find_memories first to get the ID.",
     deleteMemorySchema,
     async ({ memoryId }) => {
       await api.deleteMemory(memoryId);

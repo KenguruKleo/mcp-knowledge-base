@@ -1,6 +1,6 @@
 {
   "name": "@kengurukleo/mcp-memory-server",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "MCP server for personal memory storage and retrieval with vector search",
   "type": "module",
   "main": "dist/index.js",

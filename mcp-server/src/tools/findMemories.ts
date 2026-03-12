@@ -16,10 +16,9 @@ export const findMemoriesSchema = {
 export function registerFindMemories(server: McpServer, api: MemoryApiClient): void {
   server.tool(
     "find_memories",
-    "Search the user's personal memory for relevant information. " +
-    "Use this when the user asks you to recall something, " +
-    "or when you need context about the user's preferences, history, or personal details. " +
-    "Returns the most semantically relevant memories.",
+    "Semantic search over the user's personal long-term memory. " +
+    "Returns the most relevant memories ranked by similarity. " +
+    "Query can be a question or keywords.",
     findMemoriesSchema,
     async ({ query, limit }) => {
       const result = await api.findMemories(query, limit);

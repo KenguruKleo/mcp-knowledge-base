@@ -1,6 +1,6 @@
 {
   "name": "@kengurukleo/mcp-memory-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for personal memory storage and retrieval with vector search",
   "type": "module",
   "main": "dist/index.js",
@@ -8,8 +8,14 @@
     "mcp-memory-server": "dist/index.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KenguruKleo/mcp-knowledge-base.git",
+    "directory": "mcp-server"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",

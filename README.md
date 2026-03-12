@@ -102,11 +102,11 @@ Add to your Cursor MCP settings (`~/.cursor/mcp.json` or project-level `.cursor/
 {
   "mcpServers": {
     "memory": {
-      "command": "node",
-      "args": ["/Users/kostiantyn.yemelianov/workspace/mcp-knowledge-base/mcp-server/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "@kengurukleo/mcp-memory-server"],
       "env": {
-        "MEMORY_API_URL": "https://europe-west1-mcp-knowledge-base.cloudfunctions.net",
-        "MEMORY_API_KEY": "your-api-key-from-step-4"
+        "MEMORY_API_URL": "https://europe-west1-YOUR_PROJECT.cloudfunctions.net",
+        "MEMORY_API_KEY": "your-api-key"
       }
     }
   }

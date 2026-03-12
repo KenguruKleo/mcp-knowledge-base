@@ -1,0 +1,32 @@
+node_modules/
+dist/
+lib/
+
+*.js.map
+*.d.ts.map
+
+# Firebase
+firebase/functions/lib/
+firebase/.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Environment / secrets
+.env
+.env.*
+*.key
+serviceAccountKey.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# npm
+*.tgz
+npm-debug.log*

@@ -1,0 +1,39 @@
+{
+  "name": "@anthropic-user/mcp-memory-server",
+  "version": "0.1.0",
+  "description": "MCP server for personal memory storage and retrieval with vector search",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-memory-server": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "memory",
+    "ai",
+    "knowledge-base",
+    "vector-search"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

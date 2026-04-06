@@ -24,6 +24,46 @@ Once the backend is deployed, you'll have:
 - A **Cloud Functions URL** (e.g. `https://europe-west1-YOUR_PROJECT.cloudfunctions.net`)
 - A personal **API key**
 
+## Option: Connect via HTTP (no local process)
+
+You can connect directly to the backend using MCP Streamable HTTP (no `npx` / no local MCP server process).
+
+### Cursor
+
+```json
+{
+  "mcpServers": {
+    "memory-http": {
+      "type": "streamableHttp",
+      "url": "https://europe-west1-mcp-knowledge-base.cloudfunctions.net/mcp",
+      "headers": {
+        "Authorization": "Bearer <apiKey>"
+      }
+    }
+  }
+}
+```
+
+`<apiKey>` is a document ID from the Firestore `apiKeys` collection.
+
+### Antigravity
+
+Add an MCP server in Antigravity using Streamable HTTP to the same URL and header. If it supports raw JSON config, use:
+
+```json
+{
+  "mcpServers": {
+    "memory-http": {
+      "type": "streamableHttp",
+      "url": "https://europe-west1-mcp-knowledge-base.cloudfunctions.net/mcp",
+      "headers": {
+        "Authorization": "Bearer <apiKey>"
+      }
+    }
+  }
+}
+```
+
 ### Configure in Cursor
 
 Add to `~/.cursor/mcp.json`:

@@ -4,6 +4,7 @@ import { defineSecret } from "firebase-functions/params";
 import { handleSaveMemory } from "./handlers/saveMemory";
 import { handleFindMemories } from "./handlers/findMemories";
 import { handleDeleteMemory } from "./handlers/deleteMemory";
+import { handleMcpHttp } from "./handlers/mcpHttp";
 
 admin.initializeApp();
 
@@ -25,4 +26,9 @@ export const findMemories = onRequest(
 export const deleteMemory = onRequest(
   { cors: false, region, invoker },
   (req, res) => handleDeleteMemory(req, res)
+);
+
+export const mcp = onRequest(
+  { secrets: [geminiApiKey], cors: false, region, invoker },
+  (req, res) => handleMcpHttp(req, res, geminiApiKey.value())
 );

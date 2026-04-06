@@ -41,6 +41,50 @@ If someone has already deployed the backend for you, just configure your MCP cli
 }
 ```
 
+## Connect without local packages (HTTP MCP)
+
+If you don’t want to run any local MCP process (`npx` / `node`), you can connect **directly** to the Firebase Function over **Streamable HTTP**.
+
+### Cursor (HTTP MCP)
+
+Add to `~/.cursor/mcp.json` (or project-level `.cursor/mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "memory-http": {
+      "type": "streamableHttp",
+      "url": "https://europe-west1-mcp-knowledge-base.cloudfunctions.net/mcp",
+      "headers": {
+        "Authorization": "Bearer <apiKey>"
+      }
+    }
+  }
+}
+```
+
+### Antigravity (HTTP MCP)
+
+In Antigravity, open **MCP settings** → **Manage MCP servers** (or similar) and add a Streamable HTTP MCP server pointing to the same URL and header. If Antigravity supports a raw JSON config, it should look like:
+
+```json
+{
+  "mcpServers": {
+    "memory-http": {
+      "type": "streamableHttp",
+      "url": "https://europe-west1-mcp-knowledge-base.cloudfunctions.net/mcp",
+      "headers": {
+        "Authorization": "Bearer <apiKey>"
+      }
+    }
+  }
+}
+```
+
+Notes:
+- `<apiKey>` is the **same key** you created in Firestore `apiKeys` (used for `saveMemory`/`findMemories`/`deleteMemory` too).
+- The URL is the Firebase Function `mcp` endpoint.
+
 ## Backend Setup
 
 ### Prerequisites
